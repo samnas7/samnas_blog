@@ -42,6 +42,7 @@ class HomeController extends Controller
     {
         //dd($category_id, $type_id);
         $posts = Post::where([['type_id', '=', $type_id], ['category_id', '=', $category_id]])->paginate(10);
-        return view('posts/posts', ['posts' => $posts]);
+        $sidePost = Post::where([["created_at", ">", Carbon::now()->subWeeks(1)], ['type_id', '=', $type_id], ['category_id', '=', $category_id]])->orderBy('created_at', 'desc')->limit(10)->get();
+        return view('posts/posts', ['posts' => $posts, 'sidePost' => $sidePost]);
     }
 }
