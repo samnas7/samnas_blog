@@ -98,7 +98,8 @@
 
                     <!-- Grid row -->
                     <div class="row">
-                        @foreach ($posts as $post)
+                        @if($sidePost->count())
+                        @foreach ($sidePost as $post)
 
                         <div class=" col-12 p-1 " data-no="<?php echo $n ?>">
                             <div class="card grey lighten-2 ">
@@ -136,6 +137,7 @@
 
                         <?php $n = $n + 1; ?>
                         @endforeach
+                        @endif
                         <!-- Grid column -->
 
                     </div>
