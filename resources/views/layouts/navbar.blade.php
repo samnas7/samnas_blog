@@ -83,6 +83,9 @@
             <div class="md-form my-0">
                 <input class="form-control mr-sm-2" type="text" placeholder="Search" aria-label="Search">
             </div>
+            <div>
+                <button type="submit" class="btn-lg btn-primary" style="border:none; background-color:transparent"><i class="fa fa-search"></i></button>
+            </div>
         </form>
     </div>
     <!-- Collapsible content -->
